@@ -1,16 +1,7 @@
-#!/bin/bash
-
-# This script forces a reboot if ping to Google DNS Servers and a supernode fails
-
-# ping google
-internet=$(ping -c 1 8.8.8.8)
-
-# if ping fails
-if [ $internet -ne "0" ]; then
-        # ping supernode to be sure, that it's only the internet connection
-        $supernode=$(ping -c 1 10.188.0.241)
-        # if ping to supernode fails
-        if [ $supernode -ne "0" ]; then
-                reboot
-        fi
+if ping -c 1 -w 5 8.8.8.9 > '/dev/null' 2>&1
+then echo 'Online'
+    elif ping -c 1 -w 5 8.8.8.10 > '/dev/null' 2>&1
+        then echo "online 2"
+        else echo "reboot"
+        
 fi
