@@ -1,0 +1,1 @@
+*/2 * * * *	sh /lib/tro/netwatch/netwatch.sh;
