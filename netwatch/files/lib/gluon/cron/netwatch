@@ -1,1 +1,1 @@
-*/2 * * * *	sh /lib/tro/netwatch/netwatch.sh;
+*/5 * * * *	sh /lib/tro/netwatch/netwatch.sh;
