@@ -35,4 +35,4 @@ define Package/tro-offline_ssid/install
 	$(INSTALL_BIN) files/lib/tro/offline_ssid/offline_ssid.sh $(1)/lib/tro/offline_ssid/
 endef
 
-$(eval $(call BuildPackage,tro-netwatch))
+$(eval $(call BuildPackage,tro-offline_ssid))
