@@ -27,6 +27,7 @@ then
   then
     echo 'AP-SSID change to "'$ffupssid'"'
     /sbin/uci set wireless.client_radio0.ssid=$ffupssid
+    /sbin/uci set wireless.client_radio1.ssid=$ffupssid
     /sbin/wifi
   else
    /bin/echo 'AP-SSID is already "'$ffupssid'"'
@@ -44,6 +45,7 @@ else
     else
       echo 'AP-SSID changing to "'$ffdownssid'"'
       /sbin/uci set wireless.client_radio0.ssid=$ffdownssid
+      /sbin/uci set wireless.client_radio1.ssid=$ffdownssid
       /sbin/wifi
     fi
   else
