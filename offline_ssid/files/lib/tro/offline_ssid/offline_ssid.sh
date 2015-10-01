@@ -11,7 +11,7 @@ ffdownssid='Freifunk-Offline'
 pinghost1='fda0:747e:ab29:7405::100'
 pingcount1=5 # number of packets which have to fail 100%
 delaytime=30 # seconds between attempts
-pinghost2='fda0:747e:ab29:7405::3'
+pinghost2='fda0:747e:ab29:7405:255::3'
 pingcount=5
 
 #get current ssid from uci
