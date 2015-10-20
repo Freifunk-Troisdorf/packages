@@ -29,8 +29,8 @@ define Build/Compile
 endef
 
 define Package/tro-offline_ssid/install
-	$(INSTALL_DIR) $(1)/lib/gluon/cron/
-	$(INSTALL_DATA) files/lib/gluon/cron/offline_ssid $(1)/lib/gluon/cron/offline_ssid
+	$(INSTALL_DIR) $(1)/usr/lib/micron.d/
+	$(INSTALL_DATA) files/lib/gluon/cron/offline_ssid $(1)/usr/lib/micron.d/offline_ssid
 	$(INSTALL_DIR) $(1)/lib/tro/offline_ssid/
 	$(INSTALL_BIN) files/lib/tro/offline_ssid/offline_ssid.sh $(1)/lib/tro/offline_ssid/
 endef
