@@ -30,7 +30,7 @@ endef
 
 define Package/tro-netwatch/install
 	$(INSTALL_DIR) $(1)/usr/lib/micron.d/
-	$(INSTALL_DATA) files/lib/gluon/cron/netwatch $(1)/usr/lib/micron.d/netwatch
+	$(INSTALL_DATA) files/usr/lib/micron.d/netwatch $(1)/usr/lib/micron.d/netwatch
 	$(INSTALL_DIR) $(1)/lib/tro/netwatch/
 	$(INSTALL_BIN) files/lib/tro/netwatch/netwatch.sh $(1)/lib/tro/netwatch/
 endef
