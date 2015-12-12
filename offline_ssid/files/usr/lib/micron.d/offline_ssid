@@ -1,1 +1,0 @@
-*/5 * * * *	sh /lib/tro/offline_ssid/offline_ssid.sh;
