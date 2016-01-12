@@ -31,6 +31,7 @@ endef
 define Package/tro-netwatch/install
 	$(INSTALL_DIR) $(1)/lib/gluon/cron/
 	$(INSTALL_DATA) files/lib/gluon/cron/netwatch $(1)/lib/gluon/cron/netwatch
+	$(INSTALL_DATA) files/lib/gluon/cron/nightboot $(1)/lib/gluon/cron/nightboot
 	$(INSTALL_DIR) $(1)/lib/tro/netwatch/
 	$(INSTALL_BIN) files/lib/tro/netwatch/netwatch.sh $(1)/lib/tro/netwatch/
 endef
