@@ -3,11 +3,11 @@
 local uci = require('luci.model.uci').cursor()
 local lutil = require 'luci.util'
 
-local enabled = uci:get('tunneldigger', '@broker[0]', 'auto_mtu_enabled')
+local enabled = uci:get('network', 'mesh_vpn', 'auto_mtu_enabled')
 if not enabled then
-  uci:set('tunneldigger', '@broker[0]', 'auto_mtu_enabled','1')
-  uci:save('tunneldigger')
-  uci:commit('tunneldigger')
+  uci:set('network', 'mesh_vpn', 'auto_mtu_enabled','1')
+  uci:save('network')
+  uci:commit('network')
 
 end
 
