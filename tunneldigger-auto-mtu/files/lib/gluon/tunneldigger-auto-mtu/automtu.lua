@@ -8,12 +8,7 @@ local DSL_mtu_high = '1492' - '28'
 local result = td_mtu_low
 local mtu
 
-if not (uci:get('tunneldigger','@broker[0]','enabled') == '1') then
-  os.execute('logger automtu: mesh_vpn not enabled.')
-  os.exit()
-end
-
-if not (uci:get('tunneldigger','@broker[0]','auto_mtu_enabled') == '1') then
+if not (uci:get('network','mesh_vpn','auto_mtu_enabled') == '1') then
   os.execute('logger automtu: automtu not enabled.')
   os.exit()
 end
@@ -26,7 +21,6 @@ function setMTU ( x )
   print('restart tunneldigger...')
   uci:set('network', 'mesh_vpn', 'mtu', x)
   uci:save('network')
-  uci:commit('network')
   os.execute('/etc/init.d/tunneldigger restart')
   return x
 end
