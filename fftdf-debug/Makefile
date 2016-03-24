@@ -32,7 +32,7 @@ endef
 define Build/Compile
 endef
 
-define Package/ffho-debug/install
+define Package/fftdf-debug/install
 	$(INSTALL_DIR) $(1)/bin/
 	$(INSTALL_BIN) ./files/bin/* $(1)/bin/
 	$(INSTALL_DIR) $(1)/usr/lib/micron.d/
