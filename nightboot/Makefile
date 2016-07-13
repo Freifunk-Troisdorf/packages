@@ -31,6 +31,7 @@ endef
 define Package/tro-nightboot/install
 	$(INSTALL_DIR) $(1)/usr/lib/micron.d/
 	$(INSTALL_DATA) files/usr/lib/micron.d/nightboot $(1)/usr/lib/micron.d/nightboot
+	$(INSTALL_DATA) files/usr/lib/micron.d/nightboot $(1)/usr/lib/micron.d/wifi
 endef
 
 $(eval $(call BuildPackage,tro-nightboot))
