@@ -33,6 +33,7 @@ define Package/tro-netwatch/install
 	$(INSTALL_DATA) files/usr/lib/micron.d/netwatch $(1)/usr/lib/micron.d/netwatch
 	$(INSTALL_DIR) $(1)/lib/tro/netwatch/
 	$(INSTALL_BIN) files/lib/tro/netwatch/netwatch.sh $(1)/lib/tro/netwatch/
+	$(INSTALL_BIN) files/lib/tro/netwatch/wifi-restart.sh $(1)/lib/tro/netwatch/
 endef
 
 $(eval $(call BuildPackage,tro-netwatch))
