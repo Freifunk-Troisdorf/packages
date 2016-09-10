@@ -10,7 +10,8 @@ if [ $getrole = $ROLE ]; then
 		/bin/sleep 120
 		/sbin/wifi
 	else
-	exit 0
+		exit 0
+	fi
 else
 	exit 0
 fi
