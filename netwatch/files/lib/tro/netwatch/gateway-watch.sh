@@ -6,26 +6,22 @@ getrole=`/sbin/uci get gluon-node-info.@system[0].role`
 
 if [ $getrole = $ROLE ]; then
 	/bin/sleep 120
-	if [ $gateways -lt 1 ];
+	if [ $gateways -lt 1 ]; then
 		/sbin/reboot
 	else
 		exit 0
 	fi
-else
-	exit 0
 fi
 
-ROLE1=mesh-and-uplink
+ROLE1=meshanduplink
 neighbours=`/usr/sbin/batctl o | /bin/grep mesh0 | /usr/bin/wc -l`
 
 if [ $getrole = $ROLE1 ]; then
 	/bin/sleep 120
-	if [ $neighbours -lt 1 ];
+	if [ $neighbours -lt 1 ]; then
 		/sbin/wifi
-	elif [ $gateways -lt 1 ];
+	elif [ $gateways -lt 1 ]; then
 		/sbin/reboot
-	else
-		exit 0
 	fi
 else
 	exit 0
