@@ -13,7 +13,7 @@ HOUR=`date +"%H"`
 
 if [ $ROLE == nightswitch ]; then
 
-	if [ $HOUR -gt $OFF_HOUR ] || [ $HOUR -lt $ON_HOUR ]; then
+	if [ $HOUR -ge $OFF_HOUR ] || [ $HOUR -le $ON_HOUR ]; then
 		WIFI_OFF=1
 	else
 		WIFI_OFF=0
@@ -24,15 +24,15 @@ if [ $ROLE == nightswitch ]; then
 		if [ $? -eq 0 ]; then 										# Client network is on
 			/sbin/wifi
 		else
-			uci set wireless.client_radio0.disabled=0				# Turn Wifi On
-			uci set wireless.client_radio1.disabled=0				# Also 5Ghz
+			uci get wireless.client_radio0.device > /dev/null 2>&1 && uci set wireless.client_radio0.disabled=0				# Turn Wifi On
+			uci get wireless.client_radio1.device > /dev/null 2>&1 && uci set wireless.client_radio1.disabled=0				# Also 5Ghz
 			/sbin/wifi 												
 		fi
 	else															# Wifi should be off
 		ip addr list client0 > /dev/null 2>&1						# Client network Check
 		if [ $? -eq 0 ]; then 										# Client network is on
-			uci set wireless.client_radio0.disabled=1				# Shutdown Client Wifi
-			uci set wireless.client_radio1.disabled=1				# also 5Ghz
+			uci get wireless.client_radio0.device > /dev/null 2>&1 && uci set wireless.client_radio0.disabled=1				# Shutdown Client Wifi
+			uci get wireless.client_radio1.device > /dev/null 2>&1 && uci set wireless.client_radio1.disabled=1				# also 5Ghz
 			/sbin/wifi
 		fi
 	fi
