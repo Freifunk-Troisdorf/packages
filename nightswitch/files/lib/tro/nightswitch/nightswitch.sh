@@ -1,5 +1,7 @@
 
 #!/bin/sh
+/usr/sbin/ntpd -dn -q -p 2.openwrt.pool.ntp.org		Check Time before Run
+
 ROLE=`uci get gluon-node-info.@system[0].role`
 
 OFF_HOUR="22"
