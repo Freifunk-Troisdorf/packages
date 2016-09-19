@@ -1,6 +1,6 @@
 
 #!/bin/sh
-/usr/sbin/ntpd -dn -q -p 2.openwrt.pool.ntp.org		Check Time before Run
+/usr/sbin/ntpd -q -p 2.openwrt.pool.ntp.org		#Check Time before Run
 
 ROLE=`uci get gluon-node-info.@system[0].role`
 
@@ -11,7 +11,7 @@ WIFI24_STATUS=`uci get wireless.client_radio0.disabled`
 
 HOUR=`date +"%H"`
 
-if [ $ROLE == nightshift ]; then
+if [ $ROLE == nightswitch ]; then
 
 	if [ $HOUR -gt $OFF_HOUR ] || [ $HOUR -lt $ON_HOUR ]; then
 		WIFI_OFF=1
