@@ -13,7 +13,7 @@ HOUR=`date +"%H"`
 
 if [ $ROLE == nightswitch ]; then
 
-	if [ $HOUR -ge $OFF_HOUR ] || [ $HOUR -le $ON_HOUR ]; then
+	if [ $HOUR -ge $OFF_HOUR ] || [ $HOUR -lt $ON_HOUR ]; then
 		WIFI_OFF=1
 	else
 		WIFI_OFF=0
