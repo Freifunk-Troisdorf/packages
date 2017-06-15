@@ -5,7 +5,7 @@ getrole=`/sbin/uci get gluon-node-info.@system[0].role`
 
 if [ $getrole = $ROLE ]; then
 	/bin/sleep 120
-	if [ `/usr/sbin/batctl gwl | /bin/grep "=>" | /usr/bin/wc -l` -lt 1 ]; then
+	if [ `/usr/sbin/batctl gwl | /bin/grep "*" | /usr/bin/wc -l` -lt 1 ]; then
 		/sbin/reboot
 	else
 		exit 0
@@ -18,7 +18,7 @@ if [ $getrole = $ROLE1 ]; then
 	/bin/sleep 120
 	if [ `/usr/sbin/batctl o | /bin/grep mesh0 | /usr/bin/wc -l` -lt 1 ]; then
 		/sbin/wifi
-	elif [ `/usr/sbin/batctl gwl | /bin/grep "=>" | /usr/bin/wc -l` -lt 1 ]; then
+	elif [ `/usr/sbin/batctl gwl | /bin/grep "*" | /usr/bin/wc -l` -lt 1 ]; then
 		/sbin/reboot
 	fi
 else
