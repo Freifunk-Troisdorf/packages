@@ -6,7 +6,7 @@ UPPER_LIMIT='25' #Above this limit the node will stay online
 LOWER_LIMIT='20' #Below this limit the node will reboot
 
 #Is there an active Gateway?
-GATEWAY_TQ=`batctl gwl | grep "^=>" | awk -F'[()]' '{print $2}'| tr -d " "` #Grep the Connection Quality of the Gateway which is currently used
+GATEWAY_TQ=`batctl gwl | grep "^*" | awk -F'[()]' '{print $2}'| tr -d " "` #Grep the Connection Quality of the Gateway which is currently used
 if [ ! $GATEWAY_TQ ]; #If there is no gateway there will be errors in the following if clauses
 then
 	GATEWAY_TQ=0 #Just an easy way to get an valid value if there is no gatway
