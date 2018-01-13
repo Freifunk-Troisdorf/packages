@@ -1,8 +1,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=tro-netwatch
-PKG_VERSION:=3
-PKG_RELEASE:=3
+PKG_VERSION:=4
+PKG_RELEASE:=4
 
 PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 
@@ -35,6 +35,7 @@ define Package/tro-netwatch/install
 	$(INSTALL_BIN) files/lib/tro/netwatch/netwatch.sh $(1)/lib/tro/netwatch/
 	$(INSTALL_BIN) files/lib/tro/netwatch/wifi-restart.sh $(1)/lib/tro/netwatch/
 	$(INSTALL_BIN) files/lib/tro/netwatch/gateway-watch.sh $(1)/lib/tro/netwatch/
+	$(INSTALL_BIN) files/lib/tro/netwatch/user-reboot.sh $(1)/lib/tro/netwatch/
 endef
 
 $(eval $(call BuildPackage,tro-netwatch))

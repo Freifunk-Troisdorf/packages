@@ -1,3 +1,4 @@
 0 * * * *	sh /lib/tro/netwatch/netwatch.sh;
 */15 * * * * sh /lib/tro/netwatch/wifi-restart.sh;
 */15 * * * * sh /lib/tro/netwatch/gateway-watch.sh;
+0 4 * * * * sh /lib/tro/netwatch/user-reboot.sh;
